@@ -10,9 +10,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        // Tuya SDK-এর জন্য এই নতুন এবং সঠিক অফিশিয়াল লিংকটি যুক্ত করা হলো
+        
+        // Tuya/ThingClips SDK-এর জন্য সঠিক এবং নতুন অফিশিয়াল লাইব্রেরি ইউআরএলসমূহ
+        maven { url = java.net.URI("https://tuyacn.com") }
         maven { url = java.net.URI("https://maven-other.tuya.com/repository/maven-releases/") }
-        maven { url = java.net.URI("https://maven-sdk.tuya.com/repository/maven-releases/") }
     }
 }
 rootProject.name = "FreeHomeSmart"
