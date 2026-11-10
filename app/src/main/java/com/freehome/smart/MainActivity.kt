@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        // Throwable দিয়ে ধরা হয়েছে যাতে JNI Error এলেও অ্যাপ ক্র্যাশ না করে
         try {
             ThingHomeSdk.init(application)
         } catch (t: Throwable) {
@@ -96,7 +95,7 @@ class DeviceAdapter(
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = devices[position]
         holder.tvIcon.text = item.icon
         holder.tvName.text = item.name
