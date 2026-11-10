@@ -1,6 +1,7 @@
 package com.freehome.smart
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,7 +30,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        try { ThingHomeSdk.init(application) } catch (e: Exception) {}
+        
+        // Throwable দিয়ে ধরা হয়েছে যাতে JNI Error এলেও অ্যাপ ক্র্যাশ না করে
+        try {
+            ThingHomeSdk.init(application)
+        } catch (t: Throwable) {
+            Log.e("FreeHome", "Tuya Native JNI Warning: ${t.localizedMessage}")
+        }
+
         setContentView(R.layout.activity_main)
 
         val rvDevices = findViewById<RecyclerView>(R.id.rvDevices)
@@ -88,7 +96,7 @@ class DeviceAdapter(
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: holder: ViewHolder, position: Int) {
         val item = devices[position]
         holder.tvIcon.text = item.icon
         holder.tvName.text = item.name
