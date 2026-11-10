@@ -11,12 +11,12 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         
-        // Tuya Smart Life SDK-এর জন্য দুটি নির্দিষ্ট অফিশিয়াল রিপোজিটরি লিংক
-        maven { url = java.net.URI("https://maven-other.tuya.com/repository/maven-releases/") }
-        maven { url = java.net.URI("https://tuya.com") }
+        // Tuya-এর অফিশিয়াল রিলিজ এবং কমার্শিয়াল রিপোজিটরি লিংক
+        maven { url = uri("https://maven-other.tuya.com/repository/maven-releases/") }
+        maven { url = uri("https://maven-other.tuya.com/repository/maven-commercial-releases/") }
         
-        // কোনো কোনো ডিপেন্ডেন্সির জন্য এটি প্রয়োজন হতে পারে
-        maven { url = java.net.URI("https://jitpack.io") }
+        // অতিরিক্ত থার্ড-পার্টি প্লাগইনের জন্য
+        maven { url = uri("https://jitpack.io") }
     }
 }
 rootProject.name = "FreeHomeSmart"
