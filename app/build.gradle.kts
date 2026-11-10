@@ -13,6 +13,7 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+        multiDexEnabled = true
 
         ndk {
             abiFilters += listOf("armeabi-v7a", "arm64-v8a")
@@ -34,7 +35,6 @@ android {
     }
 }
 
-// এই অংশটি এরর দেওয়া মিসিং মডিউলটিকে স্কিপ করবে
 configurations.all {
     exclude(group = "com.thingclips.smart", module = "thingsmart-modularCampAnno")
 }
@@ -46,15 +46,3 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("com.google.code.gson:gson:2.10.1")
 }
-defaultConfig {
-        applicationId = "com.freehome.smart"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
-        multiDexEnabled = true // এটি যোগ করা হলো
-
-        ndk {
-            abiFilters += listOf("armeabi-v7a", "arm64-v8a")
-        }
-    }
