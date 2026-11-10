@@ -19,11 +19,9 @@ jobs:
           java-version: '17'
           cache: 'gradle'
 
-      # এই নতুন কোডটি আপনার প্রোজেক্টে missing থাকা আসল gradle-wrapper.jar ফাইলটি তৈরি করে দেবে
-      - name: Force Download Gradle Wrapper Jar
-        run: |
-          mkdir -p gradle/wrapper
-          curl -L -o gradle/wrapper/gradle-wrapper.jar https://githubusercontent.com
+      # এই নতুন কমান্ডটি আপনার প্রোজেক্টের ভেতর কোনো নেটওয়ার্ক ডাউনলোড ছাড়াই ফ্রেশ গ্রাডেল র‍্যাপার তৈরি করবে
+      - name: Regenerate Gradle Wrapper Files
+        run: gradle wrapper --gradle-version 8.2
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
