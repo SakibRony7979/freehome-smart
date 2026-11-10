@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#1E293B"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:background="#475569"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Living Room Light"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/dialogSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Direct TCP Socket • Port 6668"
+        android:textColor="#10B981"
+        android:textSize="12sp"
+        android:layout_marginTop="4dp" />
+
+    <Button
+        android:id="@+id/btnBigPower"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginVertical="36dp"
+        android:text="⏻"
+        android:textSize="40sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#38BDF8" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Brightness / Value"
+        android:textColor="#94A3B8"
+        android:textSize="13sp" />
+
+    <SeekBar
+        android:id="@+id/seekBrightness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="85"
+        android:layout_marginTop="8dp"
+        android:progressTint="#38BDF8"
+        android:thumbTint="#38BDF8" />
+
+</LinearLayout>
