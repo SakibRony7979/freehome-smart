@@ -41,6 +41,9 @@ configurations.all {
 
 dependencies {
     implementation("com.thingclips.smart:thingsmart:5.17.0")
+    // মিসিং থাকা ফাস্টজেসন লাইব্রেরি যোগ করা হলো
+    implementation("com.alibaba:fastjson:1.1.67.android")
+    
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
